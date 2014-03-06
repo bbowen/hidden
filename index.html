@@ -1,0 +1,75 @@
+<!doctype html>
+	<html>
+	<head>
+		<title>Hidden Nav for mobile</title>
+
+			<style>
+				#navigation {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+#navigation ul {
+    display: none;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+#navigation ul.expanded {
+    display: block;
+}
+#navigation li a {
+    display: block;
+    padding: 10px 0;
+    border-top: 1px solid #666;
+    font-size: 1.2em;
+    color: #ccc;
+    text-decoration: none;
+}
+.menu_button {
+    display: block;
+    text-align: right;
+    color: #ffc;
+    text-decoration: none;
+}
+.menu_button:hover {
+    color: #58cbdb;
+    text-decoration: none;
+}
+			</style>
+	</head>
+	
+
+	<body>
+		
+		<nav id="navigation">
+		    <a class="menu_button" href="#footer_nav" onclick="toggleNav(); return false;">&#9776;  MENU</a>
+		    <ul id="navigation_list" role="navigation">
+		        <li><a href=#>HOME</a></li>
+		        <li><a href=#>SERVICES</a></li>
+		        <li><a href=#>WORK</a></li>
+		        <li><a href=#>CONTACT</a></li>
+		    </ul>
+		</nav>
+
+<script >
+	var originalNavClasses;
+
+function toggleNav() {
+    var elem = document.getElementById('navigation_list');
+    var classes = elem.className;
+    if (originalNavClasses === undefined) {
+        originalNavClasses = classes;
+    }
+    elem.className = /expanded/.test(classes) ? originalNavClasses : originalNavClasses + ' expanded';
+}
+
+</script>
+
+	</body>
+</html>
+
+
+	
